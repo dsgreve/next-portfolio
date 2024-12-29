@@ -3,19 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 245, 245, 245;
+  --copy: 23, 23, 23;
+  --copy-secondary: 115, 115, 115;
+
+  --border: 212, 212, 212;
+
+  --cta: 114, 35, 204;
+  --cta-hover: 95, 29, 169;
+  --cta-text: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 18, 18, 18;
+    --copy: 245, 245, 245;
+    --copy-secondary: 212, 212, 212;
+
+    --border: 33, 33, 33;
+
+    --cta: 114, 35, 204;
+    --cta-hover: 95, 29, 169;
+    --cta-text: 255, 255, 255;
   }
 }
 
+.light {
+  --background: 245, 245, 245;
+  --copy: 23, 23, 23;
+  --copy-secondary: 115, 115, 115;
+
+  --border: 212, 212, 212;
+
+  --cta: 114, 35, 204;
+  --cta-hover: 95, 29, 169;
+  --cta-text: 255, 255, 255;
+}
+
+.dark {
+  --background: 23, 23, 23;
+  --copy: 245, 245, 245;
+  --copy-secondary: 212, 212, 212;
+
+  --border: 33, 33, 33;
+
+  --cta: 114, 35, 204;
+  --cta-hover: 95, 29, 169;
+  --cta-text: 255, 255, 255;
+}
+
 body {
-  color: var(--foreground);
+  color: var(--copy);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }

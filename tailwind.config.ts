@@ -9,8 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "rgba(var(--background))",
+        copy: "rgba(var(--copy))",
+      },
+      fontFamily: {
+        sans: ['var(--font-lato)', 'Lato', 'sans-serif'],
+        serif: ['var(--font-arvo)', 'Arvo', 'serif'],
       },
     },
   },
