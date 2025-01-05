@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Arvo, Lato} from 'next/font/google'
+import { Arvo, Lato} from '@next/font/google'
  
 const arvo = Arvo({
   weight: ['400', '700'],
@@ -13,7 +13,7 @@ const lato = Lato({
   weight: ['400', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-lato',
 })
  
 import "./globals.css";
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lato.variable} ${arvo.variable} antialiased`}
+        className={`${lato.variable}  ${arvo.variable}`}
       >
         {children}
       </body>
