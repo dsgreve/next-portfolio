@@ -74,3 +74,48 @@ body {
   width: 40px;
   height: 40px;
 }
+
+.nav-logo span {
+  display: flex;
+}
+
+.nav-logo_scroll-up .nav-logo_compact {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.nav-logo_scroll-down .nav-logo_compact {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.nav-logo_scroll-up .nav-logo_s {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  margin-left: 10px;
+}
+
+.nav-logo_scroll-down .nav-logo_s {
+  transform: translateX(-44px);
+  transition: transform 0.5s ease-in-out 0.3s;
+  margin-left: 10px;
+}
+.nav-logo_scroll-up .nav-logo_g {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  margin-left: 10px;
+}
+.nav-logo_scroll-down .nav-logo_g {
+  transform: translateX(-56px);
+  transition: transform 0.5s ease-in-out 0.3s;
+  margin-left: 10px;
+}
+.nav-logo_scroll-up .nav-logo_right-brace {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  margin-left: 8px;
+}
+.nav-logo_scroll-down .nav-logo_right-brace {
+  transform: translateX(-108px);
+  transition: transform 0.5s ease-in-out 0.3s;
+  margin-left: 8px;
+}
