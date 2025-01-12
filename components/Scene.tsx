@@ -1,31 +1,30 @@
 "use client";
 
-
-import { Canvas, useThree } from '@react-three/fiber';
-import Computer from './Computer';
+import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
-import { useProgress, Html, ScrollControls } from '@react-three/drei';
+import { useProgress, Html, ScrollControls, OrbitControls } from '@react-three/drei';
+import Laptop from './Laptop';
 
 function Loader() {
-  const { active, progress } = useProgress();
+  const { progress } = useProgress();
   return <Html center>{progress.toFixed(1)} % loaded</Html>;
 }
 
 export default function Scene() {
   return (
     <Canvas
-      style={{ width: '800px', height: '600px' }}
+      style={{ width: '100%', height: '500px' }}
       gl={{ antialias: true }}
       dpr={[1, 2]}
-      camera={{ position: [0, 0, 5], fov: 50 }}
+      camera={{ position: [2, 2, 13], fov: 20 }}
     >
-      <directionalLight position={[-5, -5, 5]} intensity={5} />
-      <Suspense fallback={<Loader /> }>
-        <ScrollControls damping={0.1} pages={2}>
-        <Computer />
+      <directionalLight position={[-5, -5, 5]} intensity={8} />
+      <Suspense fallback={<Loader />}>
+        <ScrollControls damping={0.1} pages={0}>
+          <Laptop />
         </ScrollControls>
+        <OrbitControls />
       </Suspense>
     </Canvas>
   );
-};
-
+}

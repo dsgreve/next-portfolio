@@ -1,8 +1,8 @@
 import * as React from "react"
 
-interface SvgComponentProps extends React.SVGProps<SVGSVGElement> {}
+type IconLightProps = React.SVGProps<SVGSVGElement>;
 
-const IconLight: React.FC<SvgComponentProps> = (props) => (
+const IconLight: React.FC<IconLightProps> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"

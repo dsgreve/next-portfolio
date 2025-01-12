@@ -1,6 +1,4 @@
-import exp from 'constants'
 import React from 'react'
-import { FaEnvelope } from 'react-icons/fa'
 
 
 export const Footer = () => {
