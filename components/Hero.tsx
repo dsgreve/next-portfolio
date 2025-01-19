@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="container relative">
       <div className="flex flex-col md:flex-row justify-center items-center h-full">
         <div className="md:w-1/2">
-          <h1 className="text-2xl md:text-6xl font-bold text-copy">Frontend Developer focused on building  exceptional and accessible products.</h1>
+          <h1 className="text-2xl md:text-6xl font-bold text-copy">Web Developer focused on building  exceptional and accessible products.</h1>
         </div>
         <div className="hidden md:block md:w-1/2">
           <Scene />

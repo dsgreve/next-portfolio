@@ -23,7 +23,7 @@ export default function Scene() {
         <ScrollControls damping={0.1} pages={0}>
           <Laptop />
         </ScrollControls>
-        <OrbitControls />
+        <OrbitControls enableZoom={false} />
       </Suspense>
     </Canvas>
   );

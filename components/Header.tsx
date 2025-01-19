@@ -3,7 +3,7 @@
 import React from 'react'
 import ThemeSwitcher from './ThemeSwitcher'
 import useScrollDirection from '@/lib/scroll-direction';
-
+import StickyCursor from './ui/StickyCursor';
 const Header = () => {
   const scrollDirection = useScrollDirection();
   
@@ -12,6 +12,7 @@ const Header = () => {
       <div className={`nav-logo flex font-serif text-2xl font-medium text-copy ${scrollDirection === 'down' ? 'nav-logo_scroll-down' : 'nav-logo_scroll-up'} `}>&#x7B; D<span className="nav-logo_compact">ale</span> <span className="nav-logo_s">S</span><span className="nav-logo_compact">.</span> <span className="nav-logo_g">G</span><span className="nav-logo_compact">reve</span> <span className="nav-logo_right-brace">&#x7D;</span></div>
       {/* <nav><ul className="flex"><li>Work</li><li>Writing</li></ul></nav> */}
       <ThemeSwitcher />
+      <StickyCursor />
     </header>
   )
 }

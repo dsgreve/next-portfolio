@@ -5,7 +5,7 @@ import { BentoGrid, BentoGridItem } from './ui/BentoGrid';
 function Grid() {
   return (
     <section id="about" className="pt-[230px]">
-      <h2 className="text-center font-serif text-3xl font-bold mb-10">About Me</h2>
+      <h2 className="text-center text-copy font-serif text-3xl font-bold mb-10">About Me</h2>
       <BentoGrid>
         {gridItems.map(({id, title, description, className, titleClassName}) => (
           <BentoGridItem 

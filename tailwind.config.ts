@@ -13,7 +13,11 @@ const config: Config = {
     extend: {
       colors: {
         background: "rgba(var(--background))",
+        gradient: "linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);",
         copy: "rgba(var(--copy))",
+      },
+      backgroundImage: {
+        gradient: "var(--gradient)",
       },
       fontFamily: {
         sans: ['var(--font-lato)', 'Lato', 'sans-serif'],

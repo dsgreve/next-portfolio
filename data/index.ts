@@ -1,7 +1,7 @@
 export const gridItems = [
   {
     id: 1,
-    title: "Full time at Altair Engineering",
+    title: "Altair Engineering",
     description: "Global Senior Web Developer",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -12,7 +12,7 @@ export const gridItems = [
   {
     id: 2,
     title: "Experience working with a global team",
-    description: "",
+    description: "Collaborating with colleagues from different countries and time zones.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -21,8 +21,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "Coding is creative",
-    description: "Interaction Design focused development",
+    title: "Incorporating creativy into coding",
+    description: "Creative solutions in every project from interactcion to accesiblity",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
