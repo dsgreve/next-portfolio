@@ -3,23 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: 245, 245, 245;
+  --background: 24241, 245, 249;
   --background-contrast: 18, 18, 18;
+  --gradient-text: linear-gradient(
+    30deg,
+    rgba(53, 12, 153, 1) 0%,
+    rgba(166, 6, 179, 1) 100%
+  );
   --gradient-light: linear-gradient(
     180deg,
-    rgba(109, 213, 250, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
+    rgba(207, 222, 243, 1) 0%,
+    rgba(224, 234, 242, 1) 100%
   );
   --gradient-dark: linear-gradient(
     180deg,
-    rgb(26, 25, 29) 60%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgb(24, 40, 72) 30%,
+    rgba(75, 108, 183) 100%
   );
-  --copy: 23, 23, 23;
+  --copy: 44, 51, 56;
+  --copy-contrast: 229, 231, 235;
   --copy-secondary: 115, 115, 115;
-
-  --border-contrast: 212, 212, 212;
-
+  --border-contrast: 229, 231, 235;
   --cta: 114, 35, 204;
   --cta-hover: 95, 29, 169;
   --cta-text: 255, 255, 255;
@@ -28,42 +32,57 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: 18, 18, 18;
-    --background-contrast: rgb(45, 245, 245);
-    --copy: 245, 245, 245;
-    --copy-secondary: 212, 212, 212;
-
+    --background-contrast: 241, 245, 249;
+    --copy: 4241, 245, 249;
+    --copy-secondary: 229, 231, 235;
     --border: 33, 33, 33;
-    --border-contrast: rgb(245, 245, 245);
+    --copy-contrast: 241, 245, 249;
+    --border-contrast: 241, 245, 249
     --cta: 114, 35, 204;
     --cta-hover: 95, 29, 169;
     --cta-text: 255, 255, 255;
+    --gradient-text: linear-gradient(
+    30deg,
+    rgba(251, 215, 134, 1) 0%,
+    rgba(247, 121, 125, 1) 100%
+    );
   }
 }
 
 .light {
-  --background: 245, 245, 245;
+  --background: 241, 245, 249;
   --background-contrast: 18, 18, 18;
   --gradient: var(--gradient-light);
-  --copy: 23, 23, 23;
-  --copy-secondary: 115, 115, 115;
-
-  --border-contrast: rgb(18, 18, 18);
-
+  --gradient-text: linear-gradient(
+    30deg,
+    rgba(53, 12, 153, 1) 0%,
+    rgba(166, 6, 179, 1) 100%
+  );
+  --copy: 44, 51, 56;
+  --copy-secondary: 33, 33, 33;
+  --copy-contrast: 229, 231, 235;
+  --border-contrast: 18, 18, 18;
   --cta: 114, 35, 204;
   --cta-hover: 95, 29, 169;
   --cta-text: 255, 255, 255;
 }
 
 .dark {
-  --background: 23, 23, 23;
-  --background-contrast: 45, 245, 245;
+  --background: 44, 51, 56;
+  --background-contrast: 241, 245, 249;
   --gradient: var(--gradient-dark);
-  --copy: 245, 245, 245;
-  --copy-secondary: 212, 212, 212;
-  --border-contrast: rgb(245, 245, 245);
+  --copy: 241, 245, 249;
+  --copy-secondary: 229, 231, 235;
+  --copy-contrast: 44, 51, 56;
+  --border-contrast: 241, 245, 249;
   --cta: 114, 35, 204;
   --cta-hover: 95, 29, 169;
   --cta-text: 255, 255, 255;
+  --gradient-text: linear-gradient(
+    30deg,
+    rgba(251, 215, 134, 1) 0%,
+    rgba(247, 121, 125, 1) 100%
+    );
 }
 
 body {
@@ -89,8 +108,24 @@ body {
   height: 40px;
 }
 
-.nav-logo span {
+.nav-logo span,
+.nav-logo div {
   display: flex;
+}
+
+.nav-logo {
+  @apply text-2xl;
+  transition: font-size 0.4s ease;
+  position: relative;
+}
+
+.nav-logo__text {
+  position: relative;
+  z-index: 50;
+}
+
+.nav-logo.nav-logo_scroll-down {
+  @apply text-lg;
 }
 
 .nav-logo_scroll-up .nav-logo_compact {
@@ -102,6 +137,48 @@ body {
   transition: opacity 0.4s ease;
 }
 
+.nav-logo__bg {
+  @appy bg-background;
+  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  z-index: 10;
+  left: 17px;
+  top: 6px;
+  transition: all 0.3s ease;
+  transition-delay: 0.5s;
+}
+
+.nav-logo_scroll-down .nav-logo__bg {
+  @appy bg-background;
+  width: 65px;
+  height: 65px;
+  left: -10px;
+  top: -15px;
+}
+
+.nav-logo_scroll-up .nav-logo__bg {
+  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  z-index: 10;
+  left: 17px;
+  top: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-logo_scroll-up .nav-logo_d {
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+  margin-left: 10px;
+}
+
+.nav-logo_scroll-down .nav-logo_d {
+  transform: translateX(-1px);
+  transition: transform 0.2s ease-in-out 0.3s;
+}
 .nav-logo_scroll-up .nav-logo_s {
   transform: translateX(0);
   transition: transform 0.4s ease;
@@ -109,17 +186,18 @@ body {
 }
 
 .nav-logo_scroll-down .nav-logo_s {
-  transform: translateX(-44px);
+  transform: translateX(-38px);
   transition: transform 0.4s ease-in-out 0.3s;
   margin-left: 10px;
 }
 .nav-logo_scroll-up .nav-logo_g {
   transform: translateX(0);
+
   transition: transform 0.4s ease;
   margin-left: 10px;
 }
 .nav-logo_scroll-down .nav-logo_g {
-  transform: translateX(-56px);
+  transform: translateX(-53px);
   transition: transform 0.4s ease-in-out 0.3s;
   margin-left: 10px;
 }
@@ -129,7 +207,7 @@ body {
   margin-left: 8px;
 }
 .nav-logo_scroll-down .nav-logo_right-brace {
-  transform: translateX(-110px);
+  transform: translateX(-101px);
   transition: transform 0.4s ease-in-out 0.3s;
   margin-left: 8px;
 }

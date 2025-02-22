@@ -2,22 +2,21 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { TextGenerateEffect } from './ui/TextGenerateEffect';
 const Scene = dynamic(() => import('./Scene'), { ssr: false });
 
-
+const animateIntro = "Welcome!";
 const Hero = () => {
   return (
-    <div className="container relative">
+    <div className="container relative max-w-[1200px]">
       <div className="flex flex-col md:flex-row justify-center items-center h-full">
         <div className="md:w-1/2">
-          <h1 className="text-2xl md:text-6xl font-bold text-copy">Web Developer focused on building  exceptional and accessible products.</h1>
+          <TextGenerateEffect words={animateIntro} />
+          <h1 className="text-2xl md:text-4xl xl:text-4xl text-center md:text-left font-semibold md:font-medium text-copy">I'm <span className="text-gradient bg-gradient-text font-semibold">Dale Greve</span>, a Web Developer based in the metro Detroit region. I focus on creating clean, accessible, well-crafted interfaces.</h1>
         </div>
-        <div className="hidden md:block md:w-1/2">
+        <div className="md:w-1/2">
           <Scene />
         </div>
-      </div>
-      <div className="">
-        <h2 className="font-serif text-6xl md:text-8xl no-wrap text-center leading-tight font-black text-copy uppercase ">Building Great Experiences</h2>
       </div>
     </div>
   );

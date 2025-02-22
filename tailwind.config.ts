@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
@@ -13,11 +14,14 @@ const config: Config = {
     extend: {
       colors: {
         background: "rgba(var(--background))",
-        gradient: "linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);",
         copy: "rgba(var(--copy))",
+        'contrast-bg': "rgba(var(--background-contrast))",
+        'contrast-copy': "rgba(var(--copy-contrast))",
+        'contrast-border': "rgba(var(--border-contrast))",
       },
       backgroundImage: {
         gradient: "var(--gradient)",
+         'gradient-text': 'var(--gradient-text)',
       },
       fontFamily: {
         sans: ['var(--font-lato)', 'Lato', 'sans-serif'],
@@ -25,6 +29,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: PluginAPI) {
+      addUtilities({
+        '.text-gradient': {
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          'color': 'transparent',
+        },
+      });
+    },
+  ],
 };
 export default config;
