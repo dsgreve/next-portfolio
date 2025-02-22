@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
 const Scene = dynamic(() => import('./Scene'), { ssr: false });
 
-const animateIntro = "Welcome!";
+const animateIntro = "Welcome Back!";
 const Hero = () => {
   return (
     <div className="container relative max-w-[1200px]">
